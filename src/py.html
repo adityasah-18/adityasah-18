@@ -7,17 +7,17 @@
     <style>
         body {
             font-family: "Lato", sans-serif;
-            background-color: #333; /* Dark Gray */
+            background-color: #333; 
             margin: 0;
             display: flex;
             height: 100vh;
-            color: white; /* Change text color to white for better contrast */
+            color: white; 
         }
 
-        /* Side Navigation Bar */
+    
         .sidebar {
             width: 200px;
-            background-color: #005f7f; /* Darker Blue */
+            background-color: #005f7f; 
             padding-top: 20px;
             position: fixed;
             height: 100%;
@@ -34,19 +34,15 @@
         }
 
         .sidebar a:hover {
-            background-color: #007bff; /* Medium Blue */
+            background-color: #007bff; 
         }
-
-        /* Main Content Area */
         .main {
-            margin-left: 220px; /* Space for the sidebar */
+            margin-left: 220px; 
             padding: 20px;
             overflow-y: auto; /* Allow scrolling for content */
             height: calc(100vh - 40px); /* Full height minus navbar */
             background-color: #444; /* Darker background for main content */
         }
-
-        /* Button Styles */
         .tab-container {
             display: flex;
             justify-content: center;
@@ -92,8 +88,6 @@
             opacity: 1; /* Fully visible */
             transform: translateY(0); /* Move to original position */
         }
-
-        /* Back button styling */
         #bt button {
             background-color: #008cba; /* Bright Blue */
             color: white;
@@ -117,8 +111,6 @@
             text-align: center;
             color: white; /* White text for headings and paragraphs */
         }
-
-        /* Table styling */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -152,8 +144,6 @@
                 margin-left: 0;
             }
         }
-
-        /* Back to Top button */
         #back-to-top {
             position: fixed;
             bottom: 20px;
@@ -189,7 +179,7 @@
 </div>
 
 <div class="main">
-    <a href="/../index.html" id="bt"><button>Back</button></a>
+    <a href="../index.html" id="bt"><button>Back</button></a>
     <p>Here are the Python notes for the exams.</p>
 
     <div id="variables" class="tabcontent">
@@ -323,24 +313,22 @@ print(greet("Alice"))  # Outputs: Hello, Alice</code></pre>
 
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].classList.remove("show"); // Hide all tab contents
+            tabcontent[i].classList.remove("show"); 
         }
 
         tablinks = document.getElementsByClassName("tablinks");
         for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", ""); // Remove active class
+            tablinks[i].className = tablinks[i].className.replace(" active", ""); 
         }
 
-        document.getElementById(tabName).classList.add("show"); // Show the current tab
-        evt.currentTarget.className += " active"; // Add active class to the button
+        document.getElementById(tabName).classList.add("show"); 
+        evt.currentTarget.className += " active"; 
     }
 
     // Set default tab
     document.addEventListener("DOMContentLoaded", function() {
-        document.querySelector('.tablinks').click(); // Click the first tab link by default
+        document.querySelector('.tablinks').click(); 
     });
-
-    // Smooth scroll for "Back to Top" button
     document.getElementById('back-to-top').addEventListener('click', function() {
         window.scrollTo({
             top: 0,
@@ -352,9 +340,9 @@ print(greet("Alice"))  # Outputs: Hello, Alice</code></pre>
     window.onscroll = function() {
         var button = document.getElementById('back-to-top');
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            button.style.display = "block"; // Show button
+            button.style.display = "block"; 
         } else {
-            button.style.display = "none"; // Hide button
+            button.style.display = "none";
         }
     };
 </script>

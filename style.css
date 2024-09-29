@@ -1,87 +1,218 @@
-*{
-  margin: 0;padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
-body{
-  height: 100%;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: rgb(196, 233, 255);
-  user-select: none;
+
+body {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}#head{
-  background-color: #1abac5;
-  
 }
-#tags {
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  background-color: rgba(34, 34, 34, 0.85);
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 2em;
+  color: #ffe1ff;
+  user-select: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .tag {
-  background-color: #000000;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  border: 0;
+  background-color: inherit;
+  padding: 6px 15px;
+  transition: 0.5s;
+  color: #e4b1f0;
   cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
+  outline: none;
 }
 
-  .tag:hover {
-    background-color: #1abac5;
-    transform: scale(1.05);
-    transition: transform 0.2s;
-  
-  
+.tag:hover {
+  color: rgb(180, 16, 16);
 }
-.tag:focus{
-  background-color: darkcyan;
+
+.tag:focus,
+.tagcontent a {
+  color: #ffe1ff;
 }
-.tagcontent {
-  color: rgb(0, 0, 0);
+
+/* Hamburger Menu for Mobile */
+.hamburger {
   display: none;
-  padding: 100px 20px;
-  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
-#Home{
-  flex: 1;
 
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #a7a7a7;
+  transition: all 0.3s ease;
 }
-#Home p {
-  font-size: 1.6em;
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 4%;
+  top: 5%;
+  background-color: #433878;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  color: #ffe1ff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #68067e;
+}
+
+.show {
+  display: block;
+}
+
+main {
+  flex: 1;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  height: 100vh;
+  font-size: larger;
+  background-image: linear-gradient(
+    to right,
+    rgb(112, 112, 112),
+    rgb(110, 70, 102),
+    rgb(120, 70, 214)
+  );
+}
+
+.tagcontent {
+  padding: 30px 100px;
+  font-size: 30px;
+  display: flex;
+  align-content: space-around;
+  color: #ffe1ff;
   text-align: center;
-  
 }
-#footer {
-  background-color: #1abac5;
-  color: white;
+
+footer {
+  background-color: #433878;
+  color: #ffe1ff;
   text-align: center;
   padding: 10px 0;
-  margin-top: 20px;
-  
-  
 }
-#About p {
-  text-align: center;
-  line-height: 1.6;
-}
-#head {
-  background-color: #1abac5;
-  text-align: center;
-  padding: 20px;
-  color: white;
-}
-@media (max-width: 768px) {
-  #head {
-    font-size: 1.5em;
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  header {
+    padding: 20px 40px;
   }
 
-  #Home p {
-    font-size: 1.2em;
+  .tag {
+    font-size: 1em;
+    padding: 5px 10px;
+  }
+
+  .tagcontent {
+    padding: 20px 50px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background-color: #433878;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 10;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .tag {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .tagcontent {
+    padding: 10px 20px;
+    font-size: 22px;
+  }
+
+  main {
+    height: auto;
+    padding: 10px;
+  }
+
+  footer {
+    padding: 10px 0;
+    font-size: 14px;
   }
 }

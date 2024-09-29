@@ -1,18 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>python</title>
-  <style>* {box-sizing: border-box}
-body {font-family: "Lato", sans-serif;
-background-color: rgb(175, 252, 252);}</style>
+    <title>Python Notes</title>
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: #333; /* Dark Gray */
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            color: white; /* Change text color to white for better contrast */
+        }
+
+        /* Side Navigation Bar */
+        .sidebar {
+            width: 200px;
+            background-color: #005f7f; /* Darker Blue */
+            padding-top: 20px;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .sidebar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #007bff; /* Medium Blue */
+        }
+
+        /* Main Content Area */
+        .main {
+            margin-left: 220px; /* Space for the sidebar */
+            padding: 20px;
+            overflow-y: auto; /* Allow scrolling for content */
+            height: calc(100vh - 40px); /* Full height minus navbar */
+            background-color: #444; /* Darker background for main content */
+        }
+
+        /* Button Styles */
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allows wrapping of buttons on smaller screens */
+            margin-bottom: 20px;
+        }
+
+        .tab button {
+            background-color: #008cba; /* Bright Blue */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 5px; /* Add margin for spacing */
+        }
+
+        .tab button:hover {
+            background-color: #007bff; /* Medium Blue */
+            transform: scale(1.05); /* Scale up slightly */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgb(77, 77, 77); /* White background for content */
+            color: rgb(255, 218, 218); /* Black text for contrast */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            margin-top: 20px;
+            opacity: 0; /* Start invisible */
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Transition on opacity and transform */
+        }
+
+        .tabcontent.show {
+            display: block; /* Show the current tab */
+            opacity: 1; /* Fully visible */
+            transform: translateY(0); /* Move to original position */
+        }
+
+        /* Back button styling */
+        #bt button {
+            background-color: #008cba; /* Bright Blue */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #bt button:hover {
+            background-color: #007bff; /* Medium Blue */
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h2, p {
+            text-align: center;
+            color: white; /* White text for headings and paragraphs */
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px; /* Space above table */
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center; /* Center-align text */
+        }
+
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            background-color: #007bff; /* Medium Blue */
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .sidebar a {
+                float: left;
+            }
+            .main {
+                margin-left: 0;
+            }
+        }
+
+        /* Back to Top button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: rgb(0, 0, 0);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        #back-to-top:hover {
+            background-color: #005f7f; /* Darker Blue */
+        }
+    </style>
 </head>
 <body>
-    <a href=".."><button>back</button></a>
-<h2>python</h2>
-<p> Here are the Python notes for the exams.</p>
-    
-  <script></script>
+
+<div class="sidebar">
+    <h2 style="color: white; text-align: center;">Python Notes</h2>
+    <a href="#variables" class="tablinks" onclick="openTab(event, 'variables')">Variables</a>
+    <a href="#datatypes" class="tablinks" onclick="openTab(event, 'datatypes')">Data Types</a>
+    <a href="#conditional" class="tablinks" onclick="openTab(event, 'conditional')">Conditional Statements</a>
+    <a href="#loops" class="tablinks" onclick="openTab(event, 'loops')">Loops</a>
+    <a href="#functions" class="tablinks" onclick="openTab(event, 'functions')">Functions</a>
+    <a href="#list" class="tablinks" onclick="openTab(event, 'list')">List</a>
+    <a href="#tuple" class="tablinks" onclick="openTab(event, 'tuple')">Tuple</a>
+    <a href="#dictionaries" class="tablinks" onclick="openTab(event, 'dictionaries')">Dictionaries</a>
+</div>
+
+<div class="main">
+    <a href="/.." id="bt"><button>Back</button></a>
+    <p>Here are the Python notes for the exams.</p>
+
+    <div id="variables" class="tabcontent">
+        <h3>Variables</h3>
+        <p>A variable is a container (storage area) used to hold data. Each variable should be given a unique name (identifier). Variables in Python can be created by simply assigning a value to a name.</p>
+        <p>Example:</p>
+        <pre><code>x = 10  # Here, x is a variable storing the integer 10</code></pre>
+        <p>Variable names can include letters, numbers, and underscores, but cannot start with a number.</p>
+    </div>
+
+    <div id="datatypes" class="tabcontent">
+        <h3>Data Types</h3>
+        <p>Data types are declarations for variables. This determines the type and size of data associated with variables which is essential to know since different data types occupy different sizes of memory.</p>
+        <h4>There are 2 types of Data Types:</h4>
+        <p>Primitive Data Types: To store simple values <br>Non-Primitive Data Types: To store complex values</p>
+        <h4>Common Data Types:</h4>
+        <ul>
+            <li><strong>int</strong>: Whole numbers, e.g., <code>x = 5</code></li>
+            <li><strong>float</strong>: Decimal numbers, e.g., <code>y = 5.0</code></li>
+            <li><strong>str</strong>: Strings (text), e.g., <code>z = "Hello"</code></li>
+            <li><strong>bool</strong>: Boolean values (True/False), e.g., <code>w = True</code></li>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data Type</th>
+                    <th>Meaning</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>int</td>
+                    <td>Whole numbers</td>
+                    <td><code>x = 5</code></td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>Decimal numbers</td>
+                    <td><code>y = 5.0</code></td>
+                </tr>
+                <tr>
+                    <td>str</td>
+                    <td>Textual data</td>
+                    <td><code>name = "Alice"</code></td>
+                </tr>
+                <tr>
+                    <td>bool</td>
+                    <td>True or False</td>
+                    <td><code>is_active = True</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="conditional" class="tabcontent">
+        <h3>Conditional Statements</h3>
+        <p>Conditional statements allow you to execute certain pieces of code based on conditions.</p>
+        <h4>Common Types:</h4>
+        <ul>
+            <li><strong>if statement</strong>: Executes a block of code if a condition is true.</li>
+            <li><strong>if-else statement</strong>: Executes one block if the condition is true, otherwise executes another block.</li>
+            <li><strong>if-elif-else statement</strong>: Checks multiple conditions.</li>
+        </ul>
+        <p>Example:</p>
+        <pre><code>age = 20
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")</code></pre>
+        <p>This checks if the age is 18 or above, and prints "Adult" or "Minor" accordingly.</p>
+    </div>
+
+    <div id="loops" class="tabcontent">
+        <h3>Loops</h3>
+        <p>Loops are used to execute a block of code repeatedly. The main types of loops are:</p>
+        <ul>
+            <li><strong>For Loop</strong>: Iterates over a sequence (like a list, tuple, or string).</li>
+            <li><strong>While Loop</strong>: Repeats as long as a specified condition is true.</li>
+            <li><strong>Nested Loop</strong>: A loop inside another loop.</li>
+        </ul>
+        <p>Example of a For Loop:</p>
+        <pre><code>for i in range(5):
+    print(i)  # Prints numbers from 0 to 4</code></pre>
+        <p>This loop prints numbers from 0 to 4.</p>
+    </div>
+
+    <div id="functions" class="tabcontent">
+        <h3>Functions</h3>
+        <p>A function is a block of reusable code that only runs when it is called. Functions can take inputs and return outputs. They help break the program into smaller, manageable parts.</p>
+        <p>Example:</p>
+        <pre><code>def greet(name):
+    return "Hello, " + name
+
+print(greet("Alice"))  # Outputs: Hello, Alice</code></pre>
+    </div>
+
+    <div id="list" class="tabcontent">
+        <h3>List</h3>
+        <p>A list is a collection that is ordered and changeable. It allows duplicate members and is defined using square brackets.</p>
+        <p>Example:</p>
+        <pre><code>fruits = ["apple", "banana", "cherry"]</code></pre>
+        <p>You can access list items by their index:</p>
+        <pre><code>print(fruits[0])  # Outputs: apple</code></pre>
+    </div>
+
+    <div id="tuple" class="tabcontent">
+        <h3>Tuple</h3>
+        <p>A tuple is a collection that is ordered and unchangeable. It allows duplicate members and is defined using parentheses.</p>
+        <p>Example:</p>
+        <pre><code>colors = ("red", "green", "blue")</code></pre>
+        <p>Tuples cannot be modified:</p>
+        <pre><code>print(colors[1])  # Outputs: green</code></pre>
+    </div>
+
+    <div id="dictionaries" class="tabcontent">
+        <h3>Dictionaries</h3>
+        <p>A dictionary is a collection that is unordered, changeable, and indexed. No duplicate members are allowed. It is defined using curly braces.</p>
+        <p>Example:</p>
+        <pre><code>person = {"name": "Alice", "age": 25}</code></pre>
+        <p>You can access dictionary values by their key:</p>
+        <pre><code>print(person["name"])  # Outputs: Alice</code></pre>
+    </div>
+</div>
+
+<button id="back-to-top">Back to Top</button>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.remove("show"); // Hide all tab contents
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", ""); // Remove active class
+        }
+
+        document.getElementById(tabName).classList.add("show"); // Show the current tab
+        evt.currentTarget.className += " active"; // Add active class to the button
+    }
+
+    // Set default tab
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector('.tablinks').click(); // Click the first tab link by default
+    });
+
+    // Smooth scroll for "Back to Top" button
+    document.getElementById('back-to-top').addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Show or hide the "Back to Top" button
+    window.onscroll = function() {
+        var button = document.getElementById('back-to-top');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            button.style.display = "block"; // Show button
+        } else {
+            button.style.display = "none"; // Hide button
+        }
+    };
+</script>
+
 </body>
 </html>

@@ -6,9 +6,7 @@ function openPage(pageName) {
     }
     document.getElementById(pageName).style.display = "block";
   }
-    document.getElementById("defaultOpen").click();
-
-  //count down date
+    document.getElementById("active").click();
   var countDownDate = new Date("Jan 5, 2025 15:37:25").getTime();
   var countdownfunction = setInterval(function() {
     var now = new Date().getTime();
@@ -24,3 +22,50 @@ function openPage(pageName) {
       document.getElementById("time").innerHTML = "EXPIRED";
     }
   }, 1000);
+
+
+  function toggleDropdown() {
+    document.getElementById("dropdown").classList.toggle("show");
+  }
+  
+ 
+  window.onclick = function(event) {
+    if (!event.target.matches('#More')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  function toggleMenu() {
+    const nav = document.querySelector('nav');
+    const hamburger = document.querySelector('.hamburger');
+    nav.classList.toggle('open');
+    hamburger.classList.toggle('open');
+  }
+  
+ 
+  function toggleDropdown() {
+    const dropdown = document.getElementById('dropdown');
+    dropdown.classList.toggle('show');
+  }
+  
+  
+  window.onclick = function (event) {
+    const nav = document.querySelector('nav');
+    const hamburger = document.querySelector('.hamburger');
+    const dropdown = document.getElementById('dropdown');
+  
+    if (!nav.contains(event.target) && !hamburger.contains(event.target)) {
+      nav.classList.remove('open');
+      hamburger.classList.remove('open');
+    }
+  
+    if (!dropdown.contains(event.target) && event.target.id !== 'More') {
+      dropdown.classList.remove('show');
+    }
+  };
+    

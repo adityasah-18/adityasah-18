@@ -9,6 +9,57 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(to right, #0D1B2A, #1B2631, #3F3B30);
+  background-size: cover;
+  overflow: hidden;
+}
+
+#stars, #stars2, #stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 
+              0px 0px #FFFFFF,
+              2000px 1500px #FFFFFF,
+              500px 800px #FFFFFF,
+              1200px 300px #FFFFFF,
+              400px 1800px #FFFFFF; 
+  animation: animStar 5s linear infinite;
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 
+              0px 0px #FFFFFF,
+              1500px 1200px #FFFFFF,
+              300px 600px #FFFFFF,
+              1000px 200px #FFFFFF,
+              600px 1500px #FFFFFF; 
+  animation: animStar 10s linear infinite;
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 
+              0px 0px #FFFFFF,
+              1000px 1000px #FFFFFF,
+              400px 400px #FFFFFF,
+              800px 100px #FFFFFF,
+              200px 1300px #FFFFFF; 
+  animation: animStar 10s linear infinite;
 }
 
 header {
@@ -17,7 +68,7 @@ header {
   left: 0;
   width: 100%;
   padding: 20px 50px;
-  background-color: rgba(34, 34, 34, 0.85);
+  background-color: rgba(13, 27, 42, 0.85);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +77,7 @@ header {
 
 .logo {
   font-size: 2em;
-  color: #ffe1ff;
+  color: #E0E0E0;
   user-select: none;
 }
 
@@ -43,21 +94,20 @@ nav {
   background-color: inherit;
   padding: 6px 15px;
   transition: 0.5s;
-  color: #e4b1f0;
+  color: #E0E0E0;
   cursor: pointer;
   outline: none;
 }
 
 .tag:hover {
-  color: rgb(180, 16, 16);
+  color: #FFD700;
 }
 
 .tag:focus,
 .tagcontent a {
-  color: #ffe1ff;
+  color: #FFD700;
 }
 
-/* Hamburger Menu for Mobile */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -71,7 +121,7 @@ nav {
   display: block;
   width: 100%;
   height: 3px;
-  background-color: #a7a7a7;
+  background-color: #B8D8D8;
   transition: all 0.3s ease;
 }
 
@@ -92,7 +142,7 @@ nav {
   position: absolute;
   right: 4%;
   top: 5%;
-  background-color: #433878;
+  background-color: rgba(255, 255, 255, 0.9);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -100,14 +150,15 @@ nav {
 }
 
 .dropdown-content a {
-  color: #ffe1ff;
+  color: #0D1B2A;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 .dropdown-content a:hover {
-  background-color: #68067e;
+  background-color: #adadad;
+  color: #0D1B2A;
 }
 
 .show {
@@ -125,9 +176,9 @@ main {
   font-size: larger;
   background-image: linear-gradient(
     to right,
-    rgb(112, 112, 112),
-    rgb(110, 70, 102),
-    rgb(120, 70, 214)
+    #0D1B2A,
+    #1B2631,
+    #3F3B30
   );
 }
 
@@ -136,18 +187,26 @@ main {
   font-size: 30px;
   display: flex;
   align-content: space-around;
-  color: #ffe1ff;
+  color: #E0E0E0;
   text-align: center;
 }
 
 footer {
-  background-color: #433878;
-  color: #ffe1ff;
+  background-color: #0D1B2A;
+  color: #E0E0E0;
   text-align: center;
   padding: 10px 0;
 }
 
-/* Responsive Design */
+@keyframes animStar {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2000px);
+  }
+}
+
 @media (max-width: 1024px) {
   header {
     padding: 20px 40px;
@@ -175,7 +234,7 @@ footer {
     position: absolute;
     top: 80px;
     right: 20px;
-    background-color: #433878;
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 15px;
     border-radius: 8px;
     z-index: 10;
@@ -215,4 +274,8 @@ footer {
     padding: 10px 0;
     font-size: 14px;
   }
+}
+
+h3 {
+  color: #B8D8D8;
 }

@@ -1,57 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="src/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://aditya.github.io/">
+    <meta property="og:url" content="https://aditya.github.io/">
     <meta
-      name="description"
-      content="ANC - A personal website of Aditya Sah, showcasing programming skills and projects."
+        name="description"
+        content="Nishan - A personal website of Aditya Sah, showcasing programming skills and projects."
     />
-    <title>ANC</title>
-  </head>
-  <body>
+    <title>Nishan</title>
+</head>
+<body>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    
     <header>
-      <p class="logo">ANC</p>
-      <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <nav id="tags">
-        <button class="tag" onclick="openPage('Home')" id="active" autofocus aria-label="Go to Home page">Home</button>
-        <button class="tag" onclick="openPage('About')">About</button>
-        <button class="tag" onclick="openPage('undefine')">Undefined</button>
-        <button class="tag" id="More" onclick="toggleDropdown()">More</button>
-        <div class="dropdown-content" id="dropdown">
-          <a href="src/py.html">Python</a><br />
-          <a href="src/java.html">Java</a><br />
+        <p class="logo">Nishan</p>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="tags">
+            <button class="tag" onclick="openPage('Home')" id="active" autofocus aria-label="Go to Home page">Home</button>
+            <button class="tag" onclick="openPage('About')">About</button>
+            <button class="tag" onclick="openPage('undefine')">Undefined</button>
+            <button class="tag" id="More" onclick="toggleDropdown()">More</button>
+            <div class="dropdown-content" id="dropdown">
+                <a href="demo.html">Add Notes</a><br />
+                <a href="py.html">Python</a><br />
+                <a href="java.html">Java</a><br />
+                <a href="h.html">H</a>
             </div>
-      </nav>
+        </nav>
     </header>
 
     <main>
-      <section id="Home" class="tagcontent">
-        <p>"Every remarkable creation <br />originates from deep <br />and <br />deliberate thinking." </p>
-      </section>
-      <section id="undefine" class="tagcontent">
-        <div class="middle">
-          <h1>COMING SOON</h1>
-          <hr style="width: 100%" />
-          <p id="time" style="font-size: 30px"></p>
-        </div>
-      </section>
+        <section id="Home" class="tagcontent">
+            <p>"Every remarkable creation <br />originates from deep <br />and <br />deliberate thinking."</p>
+        </section>
+        <section id="undefine" class="tagcontent">
+            <div class="middle">
+                <h1>COMING SOON</h1>
+                <hr style="width: 100%" />
+                <p id="time" style="font-size: 30px"></p>
+            </div>
+        </section>
 
-      <section id="About" class="tagcontent">
-        <a href="src/about.md" style="text-decoration: none;"><h3>About.md</h3></a>
-      </section>
+        <section id="About" class="tagcontent">
+            <a href="/about.md" style="text-decoration: none;"><h3>About.md</h3></a>
+        </section>
     </main>
 
     <footer id="footer">
-      <p>&copy; 2024 Aditya Sah. All rights reserved.</p>
+        <p>&copy; 2024 Aditya Sah. All rights reserved.</p>
     </footer>
-
+    
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

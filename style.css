@@ -32,8 +32,20 @@ body {
               2000px 1500px #FFFFFF,
               500px 800px #FFFFFF,
               1200px 300px #FFFFFF,
-              400px 1800px #FFFFFF; 
-  animation: animStar 5s linear infinite;
+              400px 1800px #FFFFFF,
+              300px 900px #FFFFFF,
+              1600px 1100px #FFFFFF,
+              1300px 1200px #FFFFFF,
+              700px 1700px #FFFFFF,
+              200px 600px #FFFFFF,
+              1800px 400px #FFFFFF,
+              800px 1600px #FFFFFF,
+              300px 1200px #FFFFFF,
+              900px 400px #FFFFFF,
+              1100px 1000px #FFFFFF,
+              250px 200px #FFFFFF,
+              1650px 1750px #FFFFFF; /* Added more stars */
+  animation: animStar 10s linear infinite;
 }
 
 #stars2 {
@@ -45,7 +57,17 @@ body {
               1500px 1200px #FFFFFF,
               300px 600px #FFFFFF,
               1000px 200px #FFFFFF,
-              600px 1500px #FFFFFF; 
+              600px 1500px #FFFFFF,
+              800px 900px #FFFFFF,
+              1400px 600px #FFFFFF,
+              100px 1800px #FFFFFF,
+              300px 1300px #FFFFFF,
+              1600px 500px #FFFFFF,
+              400px 1500px #FFFFFF,
+              1100px 1000px #FFFFFF,
+              200px 1200px #FFFFFF,
+              1800px 1000px #FFFFFF,
+              500px 1600px #FFFFFF; /* Added more stars */
   animation: animStar 10s linear infinite;
 }
 
@@ -58,7 +80,17 @@ body {
               1000px 1000px #FFFFFF,
               400px 400px #FFFFFF,
               800px 100px #FFFFFF,
-              200px 1300px #FFFFFF; 
+              200px 1300px #FFFFFF,
+              500px 500px #FFFFFF,
+              1200px 800px #FFFFFF,
+              1600px 300px #FFFFFF,
+              300px 1600px #FFFFFF,
+              1400px 900px #FFFFFF,
+              1800px 200px #FFFFFF,
+              700px 1700px #FFFFFF,
+              900px 1200px #FFFFFF,
+              1100px 1000px #FFFFFF,
+              200px 1800px #FFFFFF; /* Added more stars */
   animation: animStar 10s linear infinite;
 }
 
@@ -221,6 +253,70 @@ footer {
     padding: 20px 50px;
     font-size: 28px;
   }
+
+  /* Add more stars for tablet screens */
+  #stars {
+    box-shadow: 
+              0px 0px #FFFFFF,
+              2000px 1500px #FFFFFF,
+              500px 800px #FFFFFF,
+              1200px 300px #FFFFFF,
+              400px 1800px #FFFFFF,
+              300px 900px #FFFFFF,
+              1600px 1100px #FFFFFF,
+              1300px 1200px #FFFFFF,
+              700px 1700px #FFFFFF,
+              200px 600px #FFFFFF,
+              1800px 400px #FFFFFF,
+              800px 1600px #FFFFFF,
+              300px 1200px #FFFFFF,
+              900px 400px #FFFFFF,
+              1100px 1000px #FFFFFF,
+              250px 200px #FFFFFF,
+              1650px 1750px #FFFFFF,
+              300px 300px #FFFFFF,
+              1200px 1800px #FFFFFF; /* Added more stars for tablets */
+  }
+
+  #stars2 {
+    box-shadow: 
+              0px 0px #FFFFFF,
+              1500px 1200px #FFFFFF,
+              300px 600px #FFFFFF,
+              1000px 200px #FFFFFF,
+              600px 1500px #FFFFFF,
+              800px 900px #FFFFFF,
+              1400px 600px #FFFFFF,
+              100px 1800px #FFFFFF,
+              300px 1300px #FFFFFF,
+              1600px 500px #FFFFFF,
+              400px 1500px #FFFFFF,
+              1100px 1000px #FFFFFF,
+              200px 1200px #FFFFFF,
+              1800px 1000px #FFFFFF,
+              500px 1600px #FFFFFF,
+              1200px 300px #FFFFFF; /* Added more stars for tablets */
+  }
+
+  #stars3 {
+    box-shadow: 
+              0px 0px #FFFFFF,
+              1000px 1000px #FFFFFF,
+              400px 400px #FFFFFF,
+              800px 100px #FFFFFF,
+              200px 1300px #FFFFFF,
+              500px 500px #FFFFFF,
+              1200px 800px #FFFFFF,
+              1600px 300px #FFFFFF,
+              300px 1600px #FFFFFF,
+              1400px 900px #FFFFFF,
+              1800px 200px #FFFFFF,
+              700px 1700px #FFFFFF,
+              900px 1200px #FFFFFF,
+              1100px 1000px #FFFFFF,
+              200px 1800px #FFFFFF,
+              800px 1600px #FFFFFF; /* Added more stars for tablets */
+  }
 }
 
 @media (max-width: 768px) {
@@ -248,6 +344,73 @@ footer {
     margin-bottom: 10px;
     text-align: center;
   }
+
+  /* Add more stars for mobile screens */
+  #stars {
+    box-shadow: 
+              0px 0px #FFFFFF,
+              2000px 1500px #FFFFFF,
+              500px 800px #FFFFFF,
+              1200px 300px #FFFFFF,
+              400px 1800px #FFFFFF,
+              300px 900px #FFFFFF,
+              1600px 1100px #FFFFFF,
+              1300px 1200px #FFFFFF,
+              700px 1700px #FFFFFF,
+              200px 600px #FFFFFF,
+              1800px 400px #FFFFFF,
+              800px 1600px #FFFFFF,
+              300px 1200px #FFFFFF,
+              900px 400px #FFFFFF,
+              1100px 1000px #FFFFFF,
+              250px 200px #FFFFFF,
+              1650px 1750px #FFFFFF,
+              300px 300px #FFFFFF,
+              1200px 1800px #FFFFFF,
+              500px 1500px #FFFFFF; /* Added more stars for mobile */
+  }
+
+  #stars2 {
+    box-shadow: 
+              0px 0px #FFFFFF,
+              1500px 1200px #FFFFFF,
+              300px 600px #FFFFFF,
+              1000px 200px #FFFFFF,
+              600px 1500px #FFFFFF,
+              800px 900px #FFFFFF,
+              1400px 600px #FFFFFF,
+              100px 1800px #FFFFFF,
+              300px 1300px #FFFFFF,
+              1600px 500px #FFFFFF,
+              400px 1500px #FFFFFF,
+              1100px 1000px #FFFFFF,
+              200px 1200px #FFFFFF,
+              1800px 1000px #FFFFFF,
+              500px 1600px #FFFFFF,
+              1200px 300px #FFFFFF,
+              1500px 400px #FFFFFF; /* Added more stars for mobile */
+  }
+
+  #stars3 {
+    box-shadow: 
+              0px 0px #FFFFFF,
+              1000px 1000px #FFFFFF,
+              400px 400px #FFFFFF,
+              800px 100px #FFFFFF,
+              200px 1300px #FFFFFF,
+              500px 500px #FFFFFF,
+              1200px 800px #FFFFFF,
+              1600px 300px #FFFFFF,
+              300px 1600px #FFFFFF,
+              1400px 900px #FFFFFF,
+              1800px 200px #FFFFFF,
+              700px 1700px #FFFFFF,
+              900px 1200px #FFFFFF,
+              1100px 1000px #FFFFFF,
+              200px 1800px #FFFFFF,
+              800px 1600px #FFFFFF,
+              300px 1000px #FFFFFF; /* Added more stars for mobile */
+  }
 }
 
 @media (max-width: 480px) {
@@ -273,6 +436,76 @@ footer {
   footer {
     padding: 10px 0;
     font-size: 14px;
+  }
+
+  /* More stars for the smallest screens */
+  #stars {
+    box-shadow: 
+              0px 0px #FFFFFF,
+              2000px 1500px #FFFFFF,
+              500px 800px #FFFFFF,
+              1200px 300px #FFFFFF,
+              400px 1800px #FFFFFF,
+              300px 900px #FFFFFF,
+              1600px 1100px #FFFFFF,
+              1300px 1200px #FFFFFF,
+              700px 1700px #FFFFFF,
+              200px 600px #FFFFFF,
+              1800px 400px #FFFFFF,
+              800px 1600px #FFFFFF,
+              300px 1200px #FFFFFF,
+              900px 400px #FFFFFF,
+              1100px 1000px #FFFFFF,
+              250px 200px #FFFFFF,
+              1650px 1750px #FFFFFF,
+              300px 300px #FFFFFF,
+              1200px 1800px #FFFFFF,
+              500px 1500px #FFFFFF,
+              300px 600px #FFFFFF; /* Added more stars for smallest screens */
+  }
+
+  #stars2 {
+    box-shadow: 
+              0px 0px #FFFFFF,
+              1500px 1200px #FFFFFF,
+              300px 600px #FFFFFF,
+              1000px 200px #FFFFFF,
+              600px 1500px #FFFFFF,
+              800px 900px #FFFFFF,
+              1400px 600px #FFFFFF,
+              100px 1800px #FFFFFF,
+              300px 1300px #FFFFFF,
+              1600px 500px #FFFFFF,
+              400px 1500px #FFFFFF,
+              1100px 1000px #FFFFFF,
+              200px 1200px #FFFFFF,
+              1800px 1000px #FFFFFF,
+              500px 1600px #FFFFFF,
+              1200px 300px #FFFFFF,
+              1500px 400px #FFFFFF,
+              700px 500px #FFFFFF; /* Added more stars for smallest screens */
+  }
+
+  #stars3 {
+    box-shadow: 
+              0px 0px #FFFFFF,
+              1000px 1000px #FFFFFF,
+              400px 400px #FFFFFF,
+              800px 100px #FFFFFF,
+              200px 1300px #FFFFFF,
+              500px 500px #FFFFFF,
+              1200px 800px #FFFFFF,
+              1600px 300px #FFFFFF,
+              300px 1600px #FFFFFF,
+              1400px 900px #FFFFFF,
+              1800px 200px #FFFFFF,
+              700px 1700px #FFFFFF,
+              900px 1200px #FFFFFF,
+              1100px 1000px #FFFFFF,
+              200px 1800px #FFFFFF,
+              800px 1600px #FFFFFF,
+              300px 1000px #FFFFFF,
+              600px 800px #FFFFFF; /* Added more stars for smallest screens */
   }
 }
 

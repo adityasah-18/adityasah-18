@@ -1,15 +1,9 @@
-# Ignore all JavaScript files
+git rm --cached <filename>
 *.js
 *.map
 src/**/*.js
-
-# Ignore all HTML files
 *.html
 public/**/*.html
 index.html
-
-# Ignore environment files
 .env
-
-# Ignore log files
 *.log

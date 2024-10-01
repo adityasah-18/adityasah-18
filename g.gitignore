@@ -1,9 +1,0 @@
-git rm --cached <filename>
-*.js
-*.map
-src/**/*.js
-*.html
-public/**/*.html
-index.html
-.env
-*.log

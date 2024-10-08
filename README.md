@@ -1,2 +1,2 @@
-# nishan
+# Thunderbolt
 ## personal website
